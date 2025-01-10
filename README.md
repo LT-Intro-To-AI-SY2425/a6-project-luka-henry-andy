@@ -1,5 +1,5 @@
 # Link to dataset
-https://www.kaggle.com/datasets/hetbabariya/imdb-movies-data-collection-5000-records/data
+https://www.kaggle.com/code/mariapushkareva/medical-insurance-cost-with-linear-regression/input
 # Project - Create your own predictive model
 
 Predictive models are used across industries to analyze and make predictions about data. From sports to beauty products to app usage, predictive models provide individuals and businesses with data to make informed decisions.
