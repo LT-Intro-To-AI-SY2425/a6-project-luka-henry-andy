@@ -10,7 +10,7 @@ y = data["price"].values
 
 xtrain, xtest, ytrain, ytest = train_test_split(x, y, test_size=.2)
 #########################################
-
+#test commit
 model = LinearRegression().fit(xtrain, ytrain)
 
 coef = np.around(model.coef_, 2)
