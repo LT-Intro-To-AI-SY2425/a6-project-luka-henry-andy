@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
 
-data = pd.read_csv('../input/insurance.csv')
+data = pd.read_csv("insurance.csv")
 x = data[["age", "sex", "bmi", "children", "smoker", "region"]].values
 y = data["price"].values
 
