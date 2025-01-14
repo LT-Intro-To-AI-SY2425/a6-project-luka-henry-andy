@@ -1,0 +1,57 @@
+import pandas as pd
+import numpy as np
+import matplotlib.pyplot as plt
+from sklearn.linear_model import LinearRegression
+from sklearn.model_selection import train_test_split
+# if all else fails run pip install scikit-learn
+
+userAge = input("Please enter your age")
+userAge = int(userAge)
+print("You responded:", userAge)
+
+userSex = input("Please input M or F").lower()
+if userSex == "m":
+    userSex = "m"
+elif userSex == "f":
+    userSex = "f"
+else:
+    print("Sorry, I didn't understand that. Please enter 'M' or 'F'.")
+    userSex = input("Please enter 'M' or 'F': ").lower()
+
+userBmi = input("what is your BMI")
+userBmi = int(userBmi)
+#print("You responded:", response)
+
+userChildern = input("Do you have any childern? If so how many? If you have no children please enter '0'")
+userChildern = int(userChildern)
+#print("You responded:", response)
+
+userSmoker = input("Please enter 'yes' if you smoke and 'no' if you do not smoke.").lower()
+if userSmoker == "yes":
+    userSmoker = "yes"
+elif userSmoker == "no":
+    userSmoker = "no"
+else:
+    print("Sorry, I didn't understand that. Please enter 'yes' or 'no'.")
+    userSmoker = input("Please enter 'yes' or 'no': ").lower()
+#print("You responded:", response)
+
+userReigon = input("Please enter your reigon, it must be one of the following: 'northeast', 'southeast', 'southwest', 'northwest'").lower()
+if userReigon == "northeast":
+    userReigon = "northeast"
+elif userReigon == "southeast":
+    userReigon = "southeast"
+elif userReigon == "southwest":
+    userReigon = "southwest"
+elif userReigon == "northwest":
+    userReigon == "northwest"
+else:
+    print("Please enter one of the following reigons: 'northeast', 'southeast', 'southwest', 'northwest'")
+
+print("USER INPUT SUMMARY:")
+print("AGE, ", userAge)
+print("SEX, ", userSex)
+print("BMI, ", userBmi)
+print("CHILDREN, ", userChildern)
+print("SMOKER, ", userSmoker)
+print("REIGON, ", userReigon)
