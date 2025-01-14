@@ -3,6 +3,7 @@ import numpy as np
 import matplotlib.pyplot as plt
 from sklearn.linear_model import LinearRegression
 from sklearn.model_selection import train_test_split
+# if all else fails run pip install scikit-learn
 
 data = pd.read_csv("insurance.csv")
 
@@ -24,12 +25,6 @@ r_squared = round(model.score(xtrain, ytrain), 2)
 
 print(f"Model's Linear Equation: y = {coef[0]}x1 + {coef[1]}x2 + {coef[2]}x3 + {intercept}")
 print("R Squared value:", r_squared)
-
-#Predictions
-person_data = np.array([[50, 30, 1]])  # 50 years old, BMI 30, smoker (smoker = 1)
-predicted_charge = model.predict(person_data)
-predicted_charge_rounded = np.round(np.maximum(0, predicted_charge), 2)
-print(f"The predicted charge for the person is: ${predicted_charge_rounded[0]}")
 
 fig, graph = plt.subplots(1, 3, figsize=(12, 5))  # Adjusted to 1x3 for 3 features
 
@@ -56,7 +51,31 @@ for i, ax in enumerate(graph.flatten()):
 
 plt.tight_layout()
 plt.show()
+ 
+#QUESTIONNAIRE
 
+userAge = input("Please enter your age")
+userAge = int(userAge)
+
+userBmi = input("what is your BMI")
+userBmi = int(userBmi)
+
+userSmoker = input("Please enter 'yes' if you smoke and 'no' if you do not smoke.").lower()
+if userSmoker == "yes":
+    userSmoker = 1
+elif userSmoker == "no":
+    userSmoker = 0
+else:
+    print("Sorry, I didn't understand that. Please enter 'yes' or 'no'.")
+    userSmoker = input("Please enter 'yes' or 'no': ").lower()
+
+
+
+#Predictions
+person_data = np.array([[userAge, userBmi, userSmoker]])  # 50 years old, BMI 30, smoker (smoker = 1)
+predicted_charge = model.predict(person_data)
+predicted_charge_rounded = np.round(np.maximum(0, predicted_charge), 2)
+print(f"The predicted charge for the person is: ${predicted_charge_rounded[0]}")
 
 #-------------------------
 # import pandas as pd
