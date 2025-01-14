@@ -25,6 +25,12 @@ r_squared = round(model.score(xtrain, ytrain), 2)
 print(f"Model's Linear Equation: y = {coef[0]}x1 + {coef[1]}x2 + {coef[2]}x3 + {intercept}")
 print("R Squared value:", r_squared)
 
+#Predictions
+person_data = np.array([[50, 30, 1]])  # 50 years old, BMI 30, smoker (smoker = 1)
+predicted_charge = model.predict(person_data)
+predicted_charge_rounded = np.round(np.maximum(0, predicted_charge), 2)
+print(f"The predicted charge for the person is: ${predicted_charge_rounded[0]}")
+
 fig, graph = plt.subplots(1, 3, figsize=(12, 5))  # Adjusted to 1x3 for 3 features
 
 x_data = [xtrain[:, 0], xtrain[:, 1], xtrain[:, 2]]  # 'age', 'bmi', 'smoker_yes'
@@ -51,11 +57,6 @@ for i, ax in enumerate(graph.flatten()):
 plt.tight_layout()
 plt.show()
 
-#Predictions
-person_data = np.array([[50, 30, 1]])  # 50 years old, BMI 30, smoker (smoker = 1)
-predicted_charge = model.predict(person_data)
-predicted_charge_rounded = np.round(np.maximum(0, predicted_charge), 2)
-print(f"The predicted charge for the person is: ${predicted_charge_rounded[0]}")
 
 #-------------------------
 # import pandas as pd
